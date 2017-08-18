@@ -41,13 +41,13 @@ class ViewController: UIViewController {
     }
 
     @objc func clickOnFriends() {
-        self.fetchFriends(cursor: nil)
+        ViewController.fetchFriends(cursor: nil)
     }
     
 }
 
 extension ViewController {
-    func fetchFriends(cursor: String?) {
+    class func fetchFriends(cursor: String?) {
         if FBSDKAccessToken.current() != nil {
             
             var params = [String: String]()
@@ -90,5 +90,6 @@ extension ViewController {
         }
     }
 }
+
 
 
