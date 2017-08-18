@@ -11,7 +11,31 @@
 		E31F962E1F46FDAC0052E297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31F962D1F46FDAC0052E297 /* ViewController.swift */; };
 		E31F96331F46FDAC0052E297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31F96321F46FDAC0052E297 /* Assets.xcassets */; };
 		E31F96361F46FDAC0052E297 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31F96341F46FDAC0052E297 /* LaunchScreen.storyboard */; };
+		E31F964B1F4705100052E297 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31F96471F4704FE0052E297 /* FBSDKCoreKit.framework */; };
+		E31F964C1F4705100052E297 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E31F96471F4704FE0052E297 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E31F964D1F4705100052E297 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31F96481F4704FE0052E297 /* FBSDKLoginKit.framework */; };
+		E31F964E1F4705100052E297 /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E31F96481F4704FE0052E297 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E31F96501F4705630052E297 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31F964F1F4705630052E297 /* Bolts.framework */; };
+		E31F96511F4705630052E297 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E31F964F1F4705630052E297 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E31F96541F47057E0052E297 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31F96521F47057E0052E297 /* FBSDKCoreKit.framework */; };
+		E31F96551F47057E0052E297 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31F96531F47057E0052E297 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E31F96451F4704BC0052E297 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E31F96511F4705630052E297 /* Bolts.framework in Embed Frameworks */,
+				E31F964E1F4705100052E297 /* FBSDKLoginKit.framework in Embed Frameworks */,
+				E31F964C1F4705100052E297 /* FBSDKCoreKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E31F96281F46FDAC0052E297 /* FriendsFetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsFetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +45,11 @@
 		E31F96351F46FDAC0052E297 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E31F96371F46FDAC0052E297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E31F963D1F4702450052E297 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E31F96471F4704FE0052E297 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E31F96481F4704FE0052E297 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E31F964F1F4705630052E297 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		E31F96521F47057E0052E297 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E31F96531F47057E0052E297 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31F96501F4705630052E297 /* Bolts.framework in Frameworks */,
+				E31F96541F47057E0052E297 /* FBSDKCoreKit.framework in Frameworks */,
+				E31F96551F47057E0052E297 /* FBSDKLoginKit.framework in Frameworks */,
+				E31F964D1F4705100052E297 /* FBSDKLoginKit.framework in Frameworks */,
+				E31F964B1F4705100052E297 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,9 +71,13 @@
 		E31F961F1F46FDAC0052E297 = {
 			isa = PBXGroup;
 			children = (
+				E31F96521F47057E0052E297 /* FBSDKCoreKit.framework */,
+				E31F96531F47057E0052E297 /* FBSDKLoginKit.framework */,
+				E31F964F1F4705630052E297 /* Bolts.framework */,
 				E31F963D1F4702450052E297 /* README.md */,
 				E31F962A1F46FDAC0052E297 /* FriendsFetch */,
 				E31F96291F46FDAC0052E297 /* Products */,
+				E31F96461F4704FE0052E297 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +101,15 @@
 			path = FriendsFetch;
 			sourceTree = "<group>";
 		};
+		E31F96461F4704FE0052E297 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E31F96471F4704FE0052E297 /* FBSDKCoreKit.framework */,
+				E31F96481F4704FE0052E297 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,6 +120,7 @@
 				E31F96241F46FDAC0052E297 /* Sources */,
 				E31F96251F46FDAC0052E297 /* Frameworks */,
 				E31F96261F46FDAC0052E297 /* Resources */,
+				E31F96451F4704BC0052E297 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 48DVB7QH33;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/Projects/FacebookSDK";
 				INFOPLIST_FILE = FriendsFetch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pavelgnatyuk.FriendsFetch;
@@ -278,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 48DVB7QH33;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/Projects/FacebookSDK";
 				INFOPLIST_FILE = FriendsFetch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pavelgnatyuk.FriendsFetch;

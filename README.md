@@ -30,3 +30,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 ```
+
+### Add Facebook SDK
+```code
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        return true
+    }
+
+```
+
+### Add Facebook Login Button
+```code
+import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        let button: FBSDKLoginButton = FBSDKLoginButton()
+        button.readPermissions = ["public_profile", "email", "user_friends"]
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(button)
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        button.topAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+
+```
