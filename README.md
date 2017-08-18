@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 ### Add Facebook SDK
+Everything should be done accordingly to the Facebook documentation. The `AppDelegate.swift` file looks so:
 ```code
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -45,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 ### Add Facebook Login Button
+Same about the login button:
 ```code
 import UIKit
 import FBSDKCoreKit
@@ -71,3 +73,51 @@ class ViewController: UIViewController {
 }
 
 ```
+### Fetch the friends
+Here is the function retrieving the taggable friends:
+```code
+    class func fetchFriends(cursor: String?) {
+        if FBSDKAccessToken.current() != nil {
+        
+            var params = [String: String]()
+            params["fields"] = "id,name,picture,first_name,last_name,middle_name"
+            if let after = cursor {
+                params["after"] = after
+            }
+            let request: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params, httpMethod: "GET")
+            
+            request.start { (_, result, error) in
+            
+                if let error = error {
+                    print("\(String(describing: error))")
+                }
+                else {
+                    if let data = result as? [String: Any] {
+                        if let friends = data["data"] as? [Any] {
+                            for friend in friends {
+                                if let info = friend as? [String: Any],
+                                    let id = info["id"],
+                                    let name = info["name"],
+                                    let picture = info["picture"] as? [String: Any],
+                                    let pictureData = picture["data"] as? [String: Any],
+                                    let url = pictureData["url"] {
+                                    
+                                    print("id: \(id)\nname:\(name)\nurl:\(url)")
+                                }
+                            }
+                        }
+                        
+                        if let paging = data["paging"] as? [String: Any],
+                            let cursors = paging["cursors"] as? [String: Any],
+                            let after = cursors["after"] as? String {
+                            
+                            self.fetchFriends(cursor: after)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+```
+
